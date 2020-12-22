@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Voter list:{{user}}</h1>
+<br>
+<h2 id="test">Test</h2>
+<div class="container">
+        <form action="viewvoterlist" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Test/button>
+        </form>
+    </div>
+<h3 id="demo">Display</h3>
+<div class="container">
+    <ul>
+        {% for voter in voters%}
+        <li>{{voter.gender}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+var data = "{{data}}";
+document.getElementById("demo").innerHTML = data;
+var test="{{test}}"
+document.getElementById("test").innerHTML = test;
+</script>
+{% endblock %}

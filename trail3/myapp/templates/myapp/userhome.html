@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1> Welcome to User home Page: {{username}}</h1>
+    </div><br><br>
+    <div class="container">
+        <form action="logout" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Log Out</button>
+        </form>
+    </div><br><br>
+    <div class="container">
+        <form action="viewvoterlist" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">View  Voters</button>
+        </form>
+    </div><br><br>
+
+        <div class="container">
+        <form action="viewchart" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">View  Charts</button>
+        </form>
+    </div>
+
+{% endblock %}
